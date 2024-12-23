@@ -3,3 +3,5 @@ npm install
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 npm install react-responsive
+npm install prop-types
+npm install react-router-dom
