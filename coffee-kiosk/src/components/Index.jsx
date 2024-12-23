@@ -6,7 +6,7 @@ const Index = ({ onStart }) => {
       <h1 className="text-2xl font-bold">Welcome to Coffee Kiosk Pro</h1>
       <button 
         className="bg-gray-900 py-4 px-5 border-0 text-white rounded-3xl cursor-pointer start-button" 
-        onClick={onStart} // Corrected onClick handler
+        onClick={onStart} // Call the onStart prop when clicked
       >
         Start Ordering
       </button>
