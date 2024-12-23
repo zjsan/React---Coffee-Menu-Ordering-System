@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-const Index = ({ onStart }) => {
+const Landing = ({ onStart }) => {
 
   return (
     <div className="h-screen flex flex-col justify-center landing">
@@ -15,7 +15,7 @@ const Index = ({ onStart }) => {
 }
 
 // Define prop types
-Index.propTypes = {
+Landing.propTypes = {
   onStart: PropTypes.func.isRequired, 
 };
-export default Index;
+export default Landing;
