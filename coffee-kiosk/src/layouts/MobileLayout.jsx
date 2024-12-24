@@ -2,7 +2,7 @@
 
 const MobileLayout = () => {
   return (
-    <div className="p-4 max-w-md mx-auto">
+    <div className="p-0 max-w-md mx-auto">
         
     </div>
   )

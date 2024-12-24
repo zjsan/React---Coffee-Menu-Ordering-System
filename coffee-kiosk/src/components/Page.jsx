@@ -1,9 +1,13 @@
 import Header from './Header'
+import Footer  from './Footer'
+import Main from './Main'
 const Page = () => {
   return (
-    <div className='header-container'>
-      <Header/>
-    </div>
+    <>
+      <Header/> 
+      <Main/>
+      <Footer/>
+    </>
   )
 }
 
