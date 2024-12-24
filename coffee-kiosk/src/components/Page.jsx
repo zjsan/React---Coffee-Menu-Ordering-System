@@ -1,7 +1,7 @@
 import Header from './Header'
 const Page = () => {
   return (
-    <div>
+    <div className='header-container'>
       <Header/>
     </div>
   )

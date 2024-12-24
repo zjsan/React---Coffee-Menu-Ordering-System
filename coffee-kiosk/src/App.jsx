@@ -16,10 +16,10 @@ export default function App() {
     if (isTablet) return <TabletLayout />;
     if (isLaptop) return <LaptopLayout />;
   };
-
+  
   return (
     <Router>
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 m-0 p-0">
         <Layout />
         <Routes>
           <Route path="/" element={<Landing />} />

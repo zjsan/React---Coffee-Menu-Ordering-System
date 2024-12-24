@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*,html{
+*,html,body,#root{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  
   font-family: "Nunito Sans", serif;
   
 }
@@ -30,6 +33,12 @@
 
 .start-button:active{
   background-color: #D1D5DB;
+}
+
+.header-container{
+  margin-top: 0;
+  padding-top: 1.5rem;
+  background-color: #111827; 
 }
 
 @media only screen and (min-width:768px ){
