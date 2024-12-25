@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white p-4 flex justify-between items-center fixed bottom-0 w-full">
+    <footer className="bg-gray-800 text-white p-4 flex justify-between items-center fixed bottom-0 w-full">
       <div className="text-lg font-bold">
         Total: <span className="text-yellow-400">0.00</span>
       </div>
