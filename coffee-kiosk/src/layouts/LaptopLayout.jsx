@@ -1,4 +1,4 @@
-
+import Page from "../components/Page"
 
 const LaptopLayout = () => {
   return (
