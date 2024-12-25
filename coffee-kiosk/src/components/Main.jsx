@@ -11,6 +11,12 @@ const Main = () => {
           <div className="border rounded-lg p-4 text-center">Latte</div>
           <div className="border rounded-lg p-4 text-center">Dirty Matcha</div>
           <div className="border rounded-lg p-4 text-center">Spanish Latte</div>
+          <div className="border rounded-lg p-4 text-center">Americano</div>
+          <div className="border rounded-lg p-4 text-center">Caramel Macchiato</div>
+          <div className="border rounded-lg p-4 text-center">Mocha</div>
+          <div className="border rounded-lg p-4 text-center">Latte</div>
+          <div className="border rounded-lg p-4 text-center">Dirty Matcha</div>
+          <div className="border rounded-lg p-4 text-center">Spanish Latte</div>
         </div>
       </main>
       </div>
