@@ -9,6 +9,8 @@ import Specials from "./components/Specials";
 import Coffee from "./components/Coffee";
 import NonCoffee from "./components/NonCoffee";
 import Notfound from "./components/Notfound";
+import Extras from "./components/Extras";
+
 
 export default function App() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -31,6 +33,7 @@ export default function App() {
             <Route path="specials" element={<Specials />} />
             <Route path="coffee" element={<Coffee />} />
             <Route path="non-coffee" element={<NonCoffee />} />
+            <Route path="extras" element={<Extras />} />
           </Route> 
           <Route path="*" element={<Notfound />} />
         </Routes>
