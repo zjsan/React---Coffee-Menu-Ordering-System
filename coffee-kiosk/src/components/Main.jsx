@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Specials from "./Specials";
 import Coffee from "./Coffee";
+import NonCoffee from "./NonCoffee";
 
 const Main = () => {
   return (
@@ -9,6 +10,7 @@ const Main = () => {
         <Routes>
           <Route path="specials" element={<Specials />} />  
            <Route path="coffee" element={<Coffee/>} />
+           <Route path="non-coffee" element={<NonCoffee/>} />
         </Routes>
       </main>
     </div>

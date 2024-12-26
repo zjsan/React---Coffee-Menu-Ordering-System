@@ -7,6 +7,7 @@ import Landing from "./components/Landing";
 import Page from "./components/Page";
 import Specials from "./components/Specials";
 import Coffee from "./components/Coffee";
+import NonCoffee from "./components/NonCoffee";
 import Notfound from "./components/Notfound";
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/page" element={<Page />}>
             <Route path="specials" element={<Specials />} />
             <Route path="coffee" element={<Coffee />} />
+            <Route path="non-coffee" element={<NonCoffee />} />
           </Route> 
           <Route path="*" element={<Notfound />} />
         </Routes>
