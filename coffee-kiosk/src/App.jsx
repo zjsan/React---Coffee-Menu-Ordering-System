@@ -6,6 +6,7 @@ import LaptopLayout from "./layouts/LaptopLayout";
 import Landing from "./components/Landing";
 import Page from "./components/Page";
 import Specials from "./components/Specials";
+import Coffee from "./components/Coffee";
 import Notfound from "./components/Notfound";
 
 export default function App() {
@@ -25,8 +26,11 @@ export default function App() {
         <Layout />
         <Routes>
           <Route path="/" errorElement={<Notfound/>} element={<Landing />} />
-          <Route path="/page" element={<Page />} errorElement={<Notfound/>} />
-          <Route path="specials" element={<Specials />} />  
+          <Route path="/page" element={<Page />}>
+            <Route path="specials" element={<Specials />} />
+            <Route path="coffee" element={<Coffee />} />
+          </Route> 
+          <Route path="*" element={<Notfound />} />
         </Routes>
       </>
     </Router>
