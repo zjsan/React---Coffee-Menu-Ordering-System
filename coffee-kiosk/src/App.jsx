@@ -5,6 +5,8 @@ import TabletLayout from "./layouts/TabletLayout";
 import LaptopLayout from "./layouts/LaptopLayout";
 import Landing from "./components/Landing";
 import Page from "./components/Page";
+import Specials from "./components/Specials";
+import Notfound from "./components/Notfound";
 
 export default function App() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -22,8 +24,9 @@ export default function App() {
       <>
         <Layout />
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/page" element={<Page />} />
+          <Route path="/" errorElement={<Notfound/>} element={<Landing />} />
+          <Route path="/page" element={<Page />} errorElement={<Notfound/>} />
+          <Route path="specials" element={<Specials />} />  
         </Routes>
       </>
     </Router>
