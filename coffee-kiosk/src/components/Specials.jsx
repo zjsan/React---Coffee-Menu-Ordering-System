@@ -11,16 +11,19 @@ const Specials = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItemName, setSelectedItemName] = useState("");
   const [selectedPrice, setSelectedPrice] = useState(0)
+  const [selectedImage, setSelectedImage] = useState("")
 
-  const openModal = (name,price) => {
+  const openModal = (name,price,image) => {
     setSelectedItemName(name);
     setSelectedPrice(price)
+    setSelectedImage(image)
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedItemName(""); // Reset the selected item name when closing the modal
+    setSelectedPrice(0)
   };
 
   return (
@@ -33,7 +36,7 @@ const Specials = () => {
             name={item.name}
             price={item.price}
             image={item.image}
-            onClick={() => openModal(item.name,item.price)}
+            onClick={() => openModal(item.name,item.price,item.image)}
           />
         ))}
       </div>
@@ -41,9 +44,12 @@ const Specials = () => {
       {isModalOpen && (
         <div className="modal modal-open">
           <div className="modal-box py-10 px-10 ">
+            <div className="">
             <h3 className="font-bold text-lg">Item Selected</h3>
+            <img src={selectedImage} alt={selectedItemName} className="w-full h-full object-cover rounded-full" />
             <p className="py-5">{selectedItemName}</p>
             <p className="py-5">{selectedPrice}</p>
+            </div>
             <div className="modal-action">
               <button className="btn">Add to Cart</button>
               <button className="btn" onClick={closeModal}>Close</button>
