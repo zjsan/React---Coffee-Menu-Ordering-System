@@ -1,6 +1,7 @@
 npm create vite@latest
 npm install 
 npm install -D tailwindcss postcss autoprefixer
+npm i -D daisyui@latest
 npx tailwindcss init -p
 npm install react-responsive
 npm install prop-types
