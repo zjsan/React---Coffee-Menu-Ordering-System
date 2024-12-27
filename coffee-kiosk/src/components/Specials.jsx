@@ -3,19 +3,24 @@ import MenuItem from "./MenuItem";
 
 const Specials = () => {
   const specialsMenu = [
-    { name: "Caramel Macchiato", image: "/images/promo-latte.jpg" },
-    { name: "Dirty Matcha", image: "/images/discount-americano.jpg" },
-    { name: "Spanish Latte", image: "/images/discount-americano.jpg" },
+    { name: "Caramel Macchiato", price: 150, image: "/images/promo-latte.jpg" },
+    { name: "Dirty Matcha", price: 120, image: "/images/discount-americano.jpg" },
+    { name: "Spanish Latte", price: 170, image: "/images/discount-americano.jpg" },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedItemName, setSelectedItemName] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState(0)
 
-  const openModal = () => {
+  const openModal = (name,price) => {
+    setSelectedItemName(name);
+    setSelectedPrice(price)
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setSelectedItemName(""); // Reset the selected item name when closing the modal
   };
 
   return (
@@ -26,17 +31,19 @@ const Specials = () => {
           <MenuItem
             key={index}
             name={item.name}
+            price={item.price}
             image={item.image}
-            onClick={openModal}
+            onClick={() => openModal(item.name,item.price)}
           />
         ))}
       </div>
 
       {isModalOpen && (
         <div className="modal modal-open">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">Press ESC key or click the button below to close</p>
+          <div className="modal-box py-10 px-10 ">
+            <h3 className="font-bold text-lg">Item Selected</h3>
+            <p className="py-5">{selectedItemName}</p>
+            <p className="py-5">{selectedPrice}</p>
             <div className="modal-action">
               <button className="btn">Add to Cart</button>
               <button className="btn" onClick={closeModal}>Close</button>

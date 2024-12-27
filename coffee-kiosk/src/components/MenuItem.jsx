@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 
-const MenuItem = ({ name, image, onClick }) => {
+const MenuItem = ({ name,price, image, onClick }) => {
   return (
     <div
     className="border rounded-lg p-4 text-center cursor-pointer hover:shadow-md"
@@ -12,12 +12,14 @@ const MenuItem = ({ name, image, onClick }) => {
       <img src={image} alt={name} className="w-full h-full object-cover rounded-full" />
     </div>
     <p className="mt-2 font-semibold text-gray-700">{name}</p>
+    <p className="mt-2 font-semibold text-gray-700">{price}</p>
   </div>
   )
 }
 // Define prop types
 MenuItem.propTypes = {
     name: PropTypes.string.isRequired,
+    price:PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
   };
