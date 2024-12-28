@@ -13,8 +13,8 @@ const OrderSelectionModal = ({ isOpen, onClose, title, image, name, price, child
           <p className="text-xl font-bold mb-6">Price: {price}</p>
           {children}
         </div>
-        <div className="flex justify-center flex-col mt-5"> 
-          <button className="btn btn-primary mb-3">Add to Cart</button>
+        <div className="flex justify-center flex-col lg:flex-row lg:justify-end mt-5"> 
+          <button className="btn btn-primary mb-3 lg:mb-0 lg:mr-2">Add to Cart</button>
           <button className="btn btn-outline btn-primary" onClick={onClose}>Cancel</button>
         </div>
       </div>
