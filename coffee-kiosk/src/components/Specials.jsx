@@ -11,6 +11,7 @@ const Specials = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({ name: "", price: 0, image: "" });
+  const [quantity, setQuantity] = useState(1);
 
   const openModal = (name, price, image) => {
     setSelectedItem({ name, price, image });
@@ -19,6 +20,7 @@ const Specials = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setQuantity(1); // Reset quantity to 1 when opening modal
     setSelectedItem({ name: "", price: 0, image: "" });
   };
 
@@ -44,6 +46,8 @@ const Specials = () => {
         image={selectedItem.image}
         name={selectedItem.name}
         price={selectedItem.price}
+        quantity={quantity} 
+        setQuantity={setQuantity}
       >
         <p>Additional content can go here.</p>
       </OrderSelectionModal>
