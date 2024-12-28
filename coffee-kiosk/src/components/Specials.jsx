@@ -12,9 +12,13 @@ const Specials = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({ name: "", price: 0, image: "" });
   const [quantity, setQuantity] = useState(1);
+  const [type, setType] = useState("Iced");
+  const [size, setSize] = useState("Small");
 
   const openModal = (name, price, image) => {
     setSelectedItem({ name, price, image });
+    setType("Iced"); // Reset type to default when opening modal
+    setSize("Small"); // Reset size to default when opening modal
     setIsModalOpen(true);
   };
 
@@ -48,8 +52,11 @@ const Specials = () => {
         price={selectedItem.price}
         quantity={quantity} 
         setQuantity={setQuantity}
+        type={type}
+        setType={setType}
+        size={size} 
+        setSize={setSize}
       >
-        <p>Additional content can go here.</p>
       </OrderSelectionModal>
     </div>
   );
