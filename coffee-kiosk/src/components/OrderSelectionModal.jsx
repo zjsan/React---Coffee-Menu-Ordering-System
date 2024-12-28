@@ -5,17 +5,17 @@ const OrderSelectionModal = ({ isOpen, onClose, title, image, name, price, child
 
   return (
     <div className="modal modal-open">
-      <div className="modal-box py-10 px-10">
-        <div>
-          <h3 className="font-bold text-lg">{title}</h3>
-          <img src={image} alt={name} className="w-full h-full object-cover rounded-full" />
-          <p className="py-5">{name}</p>
-          <p className="py-5">{price}</p>
+      <div className="modal-box p-7 h-15  rounded-lg shadow-lg">
+        <div className="flex flex-col items-center">
+          <h3 className="text-lg font-semibold mb-2">{title}</h3>
+          <img src={image} alt={name} className="w-24 h-15 rounded-full mb-4 mt-3" />
+          <p className="text-gray-600 mb-4">{name}</p>
+          <p className="text-xl font-bold mb-6">Price: {price}</p>
           {children}
         </div>
-        <div className="modal-action">
-          <button className="btn">Add to Cart</button>
-          <button className="btn" onClick={onClose}>Close</button>
+        <div className="flex justify-center flex-col mt-5"> 
+          <button className="btn btn-primary mb-3">Add to Cart</button>
+          <button className="btn btn-outline btn-primary" onClick={onClose}>Cancel</button>
         </div>
       </div>
     </div>
