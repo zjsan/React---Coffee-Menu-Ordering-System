@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
+const CartPage = () => {
+  const [cartItems, setCartItems] = useState([]);
 
-const Cart = () => {
-  const { cartItems, removeItemFromCart, updateItemInCart } = useCart();
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('cartItems')) || [];
+    setCartItems(items);
+  }, []);
+
+  const removeItemFromCart = (index) => {
+    const updatedItems = cartItems.filter((_, i) => i !== index);
+    setCartItems(updatedItems);
+    localStorage.setItem('cartItems', JSON.stringify(updatedItems));
+  };
 
   const handleEdit = (index, newQuantity) => {
-    const newItem = { ...cartItems[index], quantity: newQuantity };
-    updateItemInCart(index, newItem);
+    const updatedItems = cartItems.map((item, i) => 
+      i === index ? { ...item, quantity: newQuantity } : item
+    );
+    setCartItems(updatedItems);
+    localStorage.setItem('cartItems', JSON.stringify(updatedItems));
   };
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container h-full mx-auto py-10 bg-slate-300">
       <h1 className="text-3xl font-bold mb-4">Coffee Kiosk Pro</h1>
       <h2 className="text-2xl mb-4">Cart</h2>
       <div className="mb-4">
-       
+        <button className="btn" onClick={() => window.history.back()}>Close</button>
       </div>
       <div>
         {cartItems.map((item, index) => (
@@ -24,7 +37,13 @@ const Cart = () => {
             <p>Price: {item.price}</p>
             <p>Quantity: {item.quantity}</p>
             <div className="flex space-x-4 mt-2">
-              <button className="btn" onClick={() => handleEdit(index, item.quantity + 1)}>Edit</button>
+              <input 
+                type="number" 
+                value={item.quantity}
+                onChange={(e) => handleEdit(index, Math.max(Number(e.target.value), 1))}
+                className="mt-1 block w-16 text-center px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                min="1"
+              />
               <button className="btn" onClick={() => removeItemFromCart(index)}>Delete</button>
             </div>
           </div>
@@ -38,4 +57,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default CartPage;
