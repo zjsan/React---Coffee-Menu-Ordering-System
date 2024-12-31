@@ -24,17 +24,18 @@ export default function App() {
   };
 
   return (
+    
     <Router>
       <>
         <Layout />
         <Routes>
           <Route path="/" errorElement={<Notfound/>} element={<Landing />} />
+          <Route path="/cart" element={<Cart/>} />
           <Route path="/page" element={<Page />}>
             <Route path="specials" element={<Specials />} />
             <Route path="coffee" element={<Coffee />} />
             <Route path="non-coffee" element={<NonCoffee />} />
             <Route path="extras" element={<Extras />} />
-            <Route path="cart" element={<Cart/>} />
           </Route> 
           <Route path="*" element={<Notfound />} />
         </Routes>
