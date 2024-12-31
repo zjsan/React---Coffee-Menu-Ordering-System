@@ -13,7 +13,14 @@ const OrderSelectionModal = ({
   setType,
   size, 
   setSize
-}) => {
+}) => { const handleAddToCart = () => { 
+  const newItem = { name, price, image, quantity, type, size, }; 
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; 
+  cartItems.push(newItem); 
+  localStorage.setItem('cartItems', JSON.stringify(cartItems)); 
+  onClose();
+ };
+  
   if (!isOpen) return null;
 
   return (
@@ -116,7 +123,7 @@ const OrderSelectionModal = ({
           </form>
         </div> 
         <div className="flex justify-center flex-col lg:flex-row lg:justify-end mt-5">
-          <button className="btn btn-primary mb-3 lg:mb-0 lg:mr-2">
+          <button className="btn btn-primary mb-3 lg:mb-0 lg:mr-2" onClick={handleAddToCart}>
             Add to Cart
           </button>
           <button className="btn btn-outline btn-primary" onClick={onClose}>
