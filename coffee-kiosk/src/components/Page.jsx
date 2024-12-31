@@ -15,7 +15,6 @@ const Page = () => {
       {/* Main Content */}
       <div className="lg:flex-1">
         <Main />
-          
         <Footer />
       </div>
     </div>
