@@ -3,8 +3,8 @@ import MenuItem from "./MenuItem";
 const Coffee = () => {
   const specialsMenu = [
       { name: "Americano", image: "/images/promo-latte.jpg" },
-      { name: "Caramel Macchiato", image: "/images/discount-americano.jpg" },
-      { name: "Spanish Latte", image: "/images/discount-americano.jpg" },
+      { name: "Caramel Macchiato", price: 150, image: "/images/discount-americano.jpg" },
+      { name: "Spanish Latte", price: 170,  image: "/images/discount-americano.jpg" },
       { name: "Mocha", image: "/images/discount-americano.jpg" },
       { name: "Latte", image: "/images/discount-americano.jpg" },
       { name: "Dirty Matcha", image: "/images/discount-americano.jpg" },
