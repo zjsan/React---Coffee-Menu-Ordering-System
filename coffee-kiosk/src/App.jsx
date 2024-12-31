@@ -10,7 +10,7 @@ import Coffee from "./components/Coffee";
 import NonCoffee from "./components/NonCoffee";
 import Notfound from "./components/Notfound";
 import Extras from "./components/Extras";
-
+import Cart from "./components/Cart";
 
 export default function App() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -34,6 +34,7 @@ export default function App() {
             <Route path="coffee" element={<Coffee />} />
             <Route path="non-coffee" element={<NonCoffee />} />
             <Route path="extras" element={<Extras />} />
+            <Route path="cart" element={<Cart/>} />
           </Route> 
           <Route path="*" element={<Notfound />} />
         </Routes>
