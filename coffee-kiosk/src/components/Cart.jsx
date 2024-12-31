@@ -60,7 +60,7 @@ const CartPage = () => {
                     />
                     <div>
                       <h3 className="text-lg font-semibold">{item.name}</h3>
-                      <p className="text-gray-500">Price: ${item.price}</p>
+                      <p className="text-gray-500">Price: {item.price}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -85,7 +85,7 @@ const CartPage = () => {
             </div>
 
             <div className="mt-8 border-t pt-4 flex items-center justify-between">
-              <h3 className="text-2xl font-bold">Total: ${calculateTotal().toFixed(2)}</h3>
+              <h3 className="text-2xl font-bold">Total: {calculateTotal().toFixed(2)}</h3>
               <div className="space-x-4">
                 <button className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
                   Proceed to Checkout
