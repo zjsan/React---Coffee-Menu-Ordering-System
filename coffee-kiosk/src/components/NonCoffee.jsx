@@ -4,7 +4,7 @@ const NonCoffee = () => {
 
    const specialsMenu = [
       { name: "Hot Cholocate", image: "/images/promo-latte.jpg" },
-      { name: "Strawberry", image: "/images/discount-americano.jpg" },
+      { name: "Oreo Strawberry", image: "/images/discount-americano.jpg" },
       { name: "Milk Fudge", image: "/images/discount-americano.jpg" },
       
     ];
