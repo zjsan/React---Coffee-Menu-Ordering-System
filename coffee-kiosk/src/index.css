@@ -45,6 +45,11 @@ body{
   background-color: #111827; 
 }
 
+footer{
+  margin-top: 10rem;
+  bottom: 0; /* Position the navbar at the bottom of the page */
+}
+
 @media only screen and (min-width:768px ){
 
   .landing{
