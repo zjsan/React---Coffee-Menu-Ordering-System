@@ -1,3 +1,4 @@
+// src/components/CartPage.js
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Header from "./Header";
@@ -38,14 +39,12 @@ const CartPage = () => {
           <div className="flex flex-col justify-center items-center">
             <p className="text-center text-gray-600">Your cart is empty.</p>
             <button
-  onClick={() => window.history.back()}
-  className="bg-blue-400 hover:bg-blue-300 text-gray-50 font-bold px-3 py-3 rounded ml-2 mt-10 w-full md:max-w-xs" 
->
-  Close
-</button>
+              onClick={() => window.history.back()}
+              className="bg-blue-400 hover:bg-blue-300 text-gray-50 font-bold px-3 py-3 rounded ml-2 mt-10 w-full md:max-w-xs"
+            >
+              Close
+            </button>
           </div>
-          
-          
         ) : (
           <div>
             <div className="grid gap-6">
@@ -89,8 +88,12 @@ const CartPage = () => {
             <div className="mt-8 border-t pt-4 flex items-center justify-between">
               <h3 className="text-2xl font-bold">Total: {calculateTotal().toFixed(2)}</h3>
               <div className="space-x-4">
-                <button className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600" onClick={() => 
-                  history.push("/order-summary", { cartItems }) }>
+                <button
+                  onClick={() =>
+                    history.push("/order-summary", { cartItems })
+                  }
+                  className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600"
+                >
                   Proceed to Checkout
                 </button>
                 <button
