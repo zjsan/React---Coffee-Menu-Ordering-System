@@ -12,7 +12,7 @@ const Coffee = () => {
       { name: "Dirty Matcha", price: 150, image: "/pictures/6616a093440b39d074035d7e255263f8.jpg" },
     ];
   
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({ name: "", price: 0, image: "" });
   const [quantity, setQuantity] = useState(1);
   const [type, setType] = useState("Iced");
