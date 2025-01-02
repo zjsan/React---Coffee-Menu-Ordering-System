@@ -2,12 +2,29 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Header from "./Header";
+import PropTypes from "prop-types";
 
 const OrderSummary = ({ cartItems, onEdit, onRemove }) => {
   const history = useHistory();
 
   const calculateTotal = () =>
     cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+   // Define prop types
+   OrderSummary.propTypes = {
+    cartItems: PropTypes.arrayOf(
+      PropTypes.shape({
+        image: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        type: PropTypes.string.isRequired,
+        size: PropTypes.string.isRequired,
+        quantity: PropTypes.number.isRequired,
+      })
+    ).isRequired,
+    onEdit: PropTypes.func.isRequired,
+    onRemove: PropTypes.func.isRequired,
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -87,5 +104,6 @@ const OrderSummary = ({ cartItems, onEdit, onRemove }) => {
     </div>
   );
 };
+
 
 export default OrderSummary;
