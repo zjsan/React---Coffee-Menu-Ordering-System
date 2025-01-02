@@ -4,10 +4,10 @@ import OrderSelectionModal from "./OrderSelectionModal";
 
 const Specials = () => {
   const specialsMenu = [
-    { name: "Caramel Macchiato", price: 150, image: "/images/promo-latte.jpg" },
-    { name: "Dirty Matcha", price: 150, image: "/images/discount-americano.jpg" },
-    { name: "Spanish Latte", price: 170, image: "/images/discount-americano.jpg" },
-    { name: "Milk Fudge", price: 150  , image: "/images/discount-americano.jpg" },
+    { name: "Caramel Macchiato", price: 150, image: "/pictures/4fd7e8466dd06e34df665b9422103baa.jpg" },
+    { name: "Dirty Matcha", price: 150, image: "/pictures/6616a093440b39d074035d7e255263f8.jpg" },
+    { name: "Spanish Latte", price: 170, image: "/pictures/384e6075849ba6118d07f523a75814ca.jpg" },
+    { name: "Milk Fudge", price: 150  , image: "/pictures/b0c5fc211162f84bfcf38da6694b2eac.jpg" },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
