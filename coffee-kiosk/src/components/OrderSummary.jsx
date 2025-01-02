@@ -1,10 +1,10 @@
 // src/components/OrderSummary.js
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import Header from "./Header";
 import PropTypes from "prop-types";
 
 const OrderSummary = ({ cartItems, onEdit, onRemove }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const calculateTotal = () =>
     cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -90,7 +90,7 @@ const OrderSummary = ({ cartItems, onEdit, onRemove }) => {
                   Checkout
                 </button>
                 <button
-                  onClick={() => history.push("/cart")}
+                  onClick={() => navigate("/cart")}
                   className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600"
                 >
                   Back to Cart
