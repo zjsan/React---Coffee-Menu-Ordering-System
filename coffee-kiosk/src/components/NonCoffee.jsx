@@ -3,9 +3,9 @@ import MenuItem from "./MenuItem"
 const NonCoffee = () => {
 
    const specialsMenu = [
-      { name: "Chocolate Milkshake",  price: 140, image: "/images/promo-latte.jpg" },
-      { name: "Oreo Strawberry", price: 140, image: "/images/discount-americano.jpg" },
-      { name: "Milk Fudge", price: 140, image: "/images/discount-americano.jpg" },
+      { name: "Chocolate Milkshake",  price: 140, image: "/pictures/70ad1ecaee9c25763bde80a90e346ddf.jpg" },
+      { name: "Oreo Strawberry", price: 140, image: "/pictures/15c4b4065fcd4f5463ebec624c6c80fd.jpg" },
+      { name: "Milk Fudge", price: 150, image: "/pictures/b0c5fc211162f84bfcf38da6694b2eac.jpg" },
       
     ];
   return (
