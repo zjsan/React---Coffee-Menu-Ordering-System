@@ -1,5 +1,4 @@
 // src/components/OrderSummary.js
-import React from "react";
 import { useHistory } from "react-router-dom";
 import Header from "./Header";
 import PropTypes from "prop-types";
