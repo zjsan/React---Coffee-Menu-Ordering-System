@@ -19,7 +19,7 @@ const MenuItem = ({ name,price, image, onClick }) => {
 // Define prop types
 MenuItem.propTypes = {
     name: PropTypes.string.isRequired,
-    price:PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,
   };
