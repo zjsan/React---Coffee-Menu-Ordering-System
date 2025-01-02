@@ -4,12 +4,12 @@ import OrderSelectionModal from "./OrderSelectionModal";
 
 const Coffee = () => {
   const coffeeMenu = [
-      { name: "Americano", price: 120, image: "/images/promo-latte.jpg" },
-      { name: "Caramel Macchiato", price: 150, image: "/images/discount-americano.jpg" },
-      { name: "Spanish Latte", price: 160,  image: "/images/discount-americano.jpg" },
-      { name: "Mocha", image: "/images/discount-americano.jpg" },
-      { name: "Latte", image: "/images/discount-americano.jpg" },
-      { name: "Dirty Matcha", image: "/images/discount-americano.jpg" },
+      { name: "Americano", price: 120, image: "/pictures/fac1afe0834dcaddc416c921e9c3d4d1.jpg" },
+      { name: "Caramel Macchiato", price: 150, image: "/pictures/4fd7e8466dd06e34df665b9422103baa.jpg" },
+      { name: "Spanish Latte", price: 160,  image: "/pictures/384e6075849ba6118d07f523a75814ca.jpg" },
+      { name: "Mocha", price: 140, image: "/pictures/62e75fa3e90db6d4eb3c7349fed210a0.jpg" },
+      { name: "Latte", price: 140, image: "/pictures/IMG_2715-5.webp" },
+      { name: "Dirty Matcha", price: 150, image: "/pictures/6616a093440b39d074035d7e255263f8.jpg" },
     ];
   
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +33,7 @@ const Coffee = () => {
 
   return (
     <div className="h-screen bg-gray-50">
-      <h1 className="text-2xl font-bold mb-4 text-center">Specials</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Menu</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         {coffeeMenu.map((item, index) => (
           <MenuItem
