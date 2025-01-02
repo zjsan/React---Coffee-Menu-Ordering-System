@@ -1,11 +1,11 @@
 // src/components/CartPage.js
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -89,9 +89,7 @@ const CartPage = () => {
               <h3 className="text-2xl font-bold">Total: {calculateTotal().toFixed(2)}</h3>
               <div className="space-x-4">
                 <button
-                  onClick={() =>
-                    history.push("/order-summary", { cartItems })
-                  }
+                   onClick={() => navigate("/order-summary", { cartItems })}
                   className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600"
                 >
                   Proceed to Checkout
