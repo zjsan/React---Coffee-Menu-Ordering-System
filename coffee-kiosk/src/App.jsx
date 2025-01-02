@@ -32,7 +32,7 @@ export default function App() {
         <Routes>
           <Route path="/" errorElement={<Notfound/>} element={<Landing />} />
           <Route path="/cart" element={<Cart/>} />
-          <Route path="/order-summary" element={<OrderSummary />} />
+          <Route path="/order-summary" element={<OrderSummary/>} />
           <Route path="/page" element={<Page />}>
             <Route path="specials" element={<Specials />} />
             <Route path="coffee" element={<Coffee />} />
