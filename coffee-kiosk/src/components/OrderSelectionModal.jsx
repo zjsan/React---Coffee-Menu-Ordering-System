@@ -22,6 +22,7 @@ const OrderSelectionModal = ({
     cartItems.push(newItem);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     onClose();
+    alert('Item added to cart!')
   };
 
   useEffect(() => {
