@@ -31,7 +31,7 @@ const OrderSelectionModal = ({
           <img
             src={image}
             alt={name}
-            className="w-24 h-15 rounded-full mb-4 mt-3"
+            className="w-36 h-15 rounded-3xl mb-4 mt-3"
           />
           <p className="text-gray-600 mb-4">{name}</p>
           <p className="text-xl font-bold mb-3">Price: {price}</p>
