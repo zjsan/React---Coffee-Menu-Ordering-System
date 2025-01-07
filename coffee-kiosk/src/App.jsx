@@ -12,6 +12,7 @@ import Notfound from "./components/Notfound";
 import Extras from "./components/Extras";
 import Cart from "./components/Cart";
 import OrderSummary from "./components/OrderSummary";
+import Payment from "./components/Payment";
 
 export default function App() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/" errorElement={<Notfound/>} element={<Landing />} />
           <Route path="/cart" element={<Cart/>} />
           <Route path="/order-summary" element={<OrderSummary/>} />
+          <Route path="/payment" element={<Payment/>} />
           <Route path="/page" element={<Page />}>
             <Route path="specials" element={<Specials />} />
             <Route path="coffee" element={<Coffee />} />
