@@ -85,23 +85,24 @@ const CartPage = () => {
               ))}
             </div>
  
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-start border-t pt-4 ">
-              <h3 className="text-2xl font-bold mb-2 md:mb-0">Total: {calculateTotal().toFixed(2)}</h3>
-              <div className="flex flex-col md:flex-row space-x-4 md:space-x-0 md:mt-0">
-                <button 
-                  onClick={() => navigate("/order-summary", { cartItems })} 
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 md:space-x-4 border-t pt-4">
+              <h3 className="text-2xl font-bold">Total: {calculateTotal().toFixed(2)}</h3>
+              <div className="flex space-x-4">
+                <button
+                  onClick={() => navigate("/order-summary", { cartItems })}
                   className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600"
                 >
                   Proceed to Checkout
                 </button>
-                <button 
-                  onClick={() => window.history.back()} 
-                  className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 mt-2 md:mt-0" 
+                <button
+                  onClick={() => window.history.back()}
+                  className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600"
                 >
                   Close
                 </button>
               </div>
             </div>
+
           </div>
         )}
       </div>
