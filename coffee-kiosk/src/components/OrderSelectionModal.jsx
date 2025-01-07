@@ -22,7 +22,7 @@ const OrderSelectionModal = ({
     cartItems.push(newItem);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
     onClose();
-    alert('Item added to cart!')
+    alert('Item added to cart!');
   };
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const OrderSelectionModal = ({
     newPrice *= quantity; // Apply quantity to the price
 
     setUpdatedPrice(newPrice);
-  }, [type, size, price, quantity]); // Update price on type, size, price, and quantity change
+  }, [type, size, price, quantity]);
 
   useEffect(() => {
     // Disable size selection for Hot drinks and reset size to default ("Small") when switching from Hot to Iced
@@ -47,7 +47,7 @@ const OrderSelectionModal = ({
     } else if (type === "Iced" && size === "") { 
       setSize("Small"); // Reset size to Small when switching from Hot to Iced
     }
-  }, [type, size]); // Update size on type change
+  }, [type, size, setSize]);
 
   useEffect(() => {
     // Disable type and size for Extras
@@ -59,7 +59,7 @@ const OrderSelectionModal = ({
       setType("N/A"); // Set type to N/A for Extras
       setSize("N/A"); // Set size to N/A for Extras
     }
-  }, [name]);
+  }, [name, setType, setSize]);
 
   if (!isOpen) return null;
 
