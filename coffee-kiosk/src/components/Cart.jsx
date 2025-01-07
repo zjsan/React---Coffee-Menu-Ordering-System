@@ -85,9 +85,9 @@ const CartPage = () => {
               ))}
             </div>
  
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 md:space-x-4 border-t pt-4">
-              <h3 className="text-2xl font-bold">Total: {calculateTotal().toFixed(2)}</h3>
-              <div className="flex space-x-4">
+            <div className="flex flex-col md:flex-row justify-between items-center border-t pt-4">
+              <h3 className="text-2xl font-bold mb-4 md:mb-0">Total: {calculateTotal().toFixed(2)}</h3>
+              <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                 <button
                   onClick={() => navigate("/order-summary", { cartItems })}
                   className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600"
@@ -102,7 +102,6 @@ const CartPage = () => {
                 </button>
               </div>
             </div>
-
           </div>
         )}
       </div>
