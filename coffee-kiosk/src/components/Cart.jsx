@@ -1,10 +1,12 @@
-// src/components/CartPage.js
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
+import CartItemEdit from "./CartItemEdit"; // Import the modal component
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
+  const [isEditModalOpen, setEditModalOpen] = useState(false);
+  const [selectedItemIndex, setSelectedItemIndex] = useState(null); // Track which item is being edited
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,12 +20,18 @@ const CartPage = () => {
     localStorage.setItem("cartItems", JSON.stringify(updatedItems));
   };
 
-  const handleEdit = (index, newQuantity) => {
+  const handleEditItem = (index) => {
+    setSelectedItemIndex(index);
+    setEditModalOpen(true);
+  };
+
+  const handleUpdateItem = (updatedItem) => {
     const updatedItems = cartItems.map((item, i) =>
-      i === index ? { ...item, quantity: newQuantity } : item
+      i === selectedItemIndex ? updatedItem : item
     );
     setCartItems(updatedItems);
     localStorage.setItem("cartItems", JSON.stringify(updatedItems));
+    setEditModalOpen(false);
   };
 
   const calculateTotal = () =>
@@ -65,15 +73,12 @@ const CartPage = () => {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <input
-                      type="number"
-                      value={item.quantity}
-                      onChange={(e) =>
-                        handleEdit(index, Math.max(Number(e.target.value), 1))
-                      }
-                      className="w-16 text-center px-2 py-1 border rounded-lg"
-                      min="1"
-                    />
+                    <button
+                      onClick={() => handleEditItem(index)}
+                      className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600"
+                    >
+                      Edit
+                    </button>
                     <button
                       onClick={() => removeItemFromCart(index)}
                       className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
@@ -84,9 +89,11 @@ const CartPage = () => {
                 </div>
               ))}
             </div>
- 
+
             <div className="flex flex-col md:flex-row justify-between items-center border-t pt-4">
-              <h3 className="text-2xl font-bold mb-4 md:mb-0">Total: {calculateTotal().toFixed(2)}</h3>
+              <h3 className="text-2xl font-bold mb-4 md:mb-0">
+                Total: {calculateTotal().toFixed(2)}
+              </h3>
               <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                 <button
                   onClick={() => navigate("/order-summary", { cartItems })}
@@ -105,6 +112,16 @@ const CartPage = () => {
           </div>
         )}
       </div>
+
+      {/* Render the Edit Modal */}
+      {isEditModalOpen && selectedItemIndex !== null && (
+        <CartItemEdit
+          isOpen={isEditModalOpen}
+          onClose={() => setEditModalOpen(false)}
+          item={cartItems[selectedItemIndex]}
+          onUpdate={handleUpdateItem}
+        />
+      )}
     </div>
   );
 };
