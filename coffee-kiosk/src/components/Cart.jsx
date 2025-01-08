@@ -99,7 +99,7 @@ const CartPage = () => {
               </h3>
               <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                 <button
-                  onClick={() => navigate("/order-summary", { cartItems })}
+                  onClick={() => navigate("/payment")}
                   className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600"
                 >
                   Proceed to Checkout
