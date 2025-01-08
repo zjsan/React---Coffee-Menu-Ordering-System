@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 
 const CartItemEdit = ({
   isOpen,
@@ -61,7 +62,7 @@ const CartItemEdit = ({
           <p className="text-gray-600 mb-4">{item.name}</p>
           <p className="text-xl font-bold mb-3">Price: {updatedPrice}</p>
 
-          <form className="form mt-0 flex flex-col items-start" action="">
+          <form className="form mt-0 flex flex-col items-start">
             {/* Quantity Selection */}
             <div className="flex items-center">
               <span>Quantity: </span>
@@ -164,6 +165,22 @@ const CartItemEdit = ({
       </div>
     </div>
   );
+};
+
+// Add prop type validations
+CartItemEdit.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    size: PropTypes.string.isRequired,
+    basePrice: PropTypes.number.isRequired,
+  }).isRequired,
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default CartItemEdit;

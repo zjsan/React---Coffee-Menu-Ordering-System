@@ -118,7 +118,11 @@ const CartPage = () => {
         <CartItemEdit
           isOpen={isEditModalOpen}
           onClose={() => setEditModalOpen(false)}
-          item={cartItems[selectedItemIndex]}
+          item={{
+            ...cartItems[selectedItemIndex],
+            basePrice: cartItems[selectedItemIndex].basePrice || cartItems[selectedItemIndex].price,
+            price: cartItems[selectedItemIndex].price || 0
+          }} // Ensure basePrice and price are not undefined or null
           onUpdate={handleUpdateItem}
         />
       )}
