@@ -11,7 +11,10 @@ const CartPage = () => {
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartItems(items);
+    setCartItems(items.map(item => ({
+      ...item,
+      quantity: Number(item.quantity) // Ensure quantity is a number
+    })));
   }, []);
 
   const removeItemFromCart = (index) => {
@@ -35,7 +38,7 @@ const CartPage = () => {
   };
 
   const calculateTotal = () =>
-    cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    cartItems.reduce((acc, item) => acc + item.price, 0);
 
   return (
     <div className="bg-gray-100 min-h-screen">
