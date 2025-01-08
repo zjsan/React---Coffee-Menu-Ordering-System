@@ -50,6 +50,17 @@ const OrderSelectionModal = ({
   }, [type, size, setSize]);
 
   useEffect(() => {
+    // Disable type for specific items
+    if (
+      name === "Chocolate Milkshake" ||
+      name === "Oreo Strawberry" ||
+      name === "Milk Fudge"
+    ) {
+      setType("Iced") // Set type to N/A for these items
+    }
+  }, [name, setType]);
+
+  useEffect(() => {
     // Disable type and size for Extras
     if (
       name === "Espresso Shot" ||
@@ -59,7 +70,7 @@ const OrderSelectionModal = ({
       setType("N/A"); // Set type to N/A for Extras
       setSize("N/A"); // Set size to N/A for Extras
     }
-  }, [name, setType, setSize]);
+  }, [name, setType, setSize]); 
 
   if (!isOpen) return null;
 
@@ -76,7 +87,7 @@ const OrderSelectionModal = ({
           <p className="text-gray-600 mb-4">{name}</p>
           <p className="text-xl font-bold mb-3">Price: {updatedPrice}</p>
 
-          <form className="form mt-0 flex flex-col items-start" action="">
+          <form className="form mt-0 flex flex-col items-start">
             {/* Quantity Selection */}
             <div className="flex items-center">
               <span>Quantity: </span>
@@ -91,11 +102,14 @@ const OrderSelectionModal = ({
               />
             </div>
 
-            {/* Type Selection (enable for non-Extras) */}
+            {/* Type Selection (enable for non-Extras except specific items) */}
             {!(
               name === "Espresso Shot" ||
               name === "Syrup (15g)" ||
-              name === "Pancakes (5 pieces)"
+              name === "Pancakes (5 pieces)" || 
+              name === "Chocolate Milkshake" || 
+              name === "Oreo Strawberry" ||
+              name === "Milk Fudge"
             ) && (
               <div className="mt-0 mb-0 h-1 p-0 flex items-center justify-center py-5 ">
                 <span>Type: </span>
