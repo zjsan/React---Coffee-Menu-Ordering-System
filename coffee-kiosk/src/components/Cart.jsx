@@ -37,8 +37,10 @@ const CartPage = () => {
     setEditModalOpen(false);
   };
 
-  const calculateTotal = () =>
-    cartItems.reduce((acc, item) => acc + item.price, 0);
+  const calculateTotal = () => {
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    return totalPrice;
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -72,7 +74,7 @@ const CartPage = () => {
                     />
                     <div>
                       <h3 className="text-lg font-semibold">{item.name}</h3>
-                      <p className="text-gray-500">Price: {item.price}</p>
+                      <p className="text-gray-500">Price: {item.price * item.quantity}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
@@ -129,6 +131,7 @@ const CartPage = () => {
           onUpdate={handleUpdateItem}
         />
       )}
+      
     </div>
   );
 };
