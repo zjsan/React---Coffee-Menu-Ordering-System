@@ -7,7 +7,7 @@ const Footer = () => {
   const { totalPrice } = useTotalPrice(); // Get the totalPrice from the context
 
   return (
-    <div className="footer-container fixed bottom-0 mx-auto">
+    <div className="footer-container fixed bottom-0 mx-auto md: w-screen">
       <footer className="bg-gray-800 text-white p-4 flex justify-between items-center w-screen ">
         <div className="text-lg font-bold">
           Total: <span className="text-yellow-400">{totalPrice.toFixed(2)}</span>
