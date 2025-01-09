@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import CartItemEdit from "./CartItemEdit"; // Import the modal component
+import { useTotalPrice } from "./TotalPriceContext";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [selectedItemIndex, setSelectedItemIndex] = useState(null); // Track which item is being edited
   const navigate = useNavigate();
+  const { setTotalPrice } = useTotalPrice(); // Get the setTotalPrice function from the context
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -16,6 +18,9 @@ const CartPage = () => {
       quantity: Number(item.quantity) // Ensure quantity is a number
     })));
   }, []);
+  
+  useEffect(() => { setTotalPrice(calculateTotal()); // Update the total price in the context whenever the cart items change 
+   }, [cartItems]);
 
   const removeItemFromCart = (index) => {
     const updatedItems = cartItems.filter((_, i) => i !== index);

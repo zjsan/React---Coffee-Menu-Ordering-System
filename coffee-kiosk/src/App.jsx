@@ -13,6 +13,7 @@ import Extras from "./components/Extras";
 import Cart from "./components/Cart";
 import OrderSummary from "./components/OrderSummary";
 import Payment from "./components/Payment";
+import { TotalPriceProvider } from "./components/TotalPriceContext"; // Import the provider
 
 export default function App() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -26,24 +27,25 @@ export default function App() {
   };
 
   return (
-    
-    <Router>
-      <>
-        <Layout />
-        <Routes>
-          <Route path="/" errorElement={<Notfound/>} element={<Landing />} />
-          <Route path="/cart" element={<Cart/>} />
-          <Route path="/order-summary" element={<OrderSummary/>} />
-          <Route path="/payment" element={<Payment/>} />
-          <Route path="/page" element={<Page />}>
-            <Route path="specials" element={<Specials />} />
-            <Route path="coffee" element={<Coffee />} />
-            <Route path="non-coffee" element={<NonCoffee />} />
-            <Route path="extras" element={<Extras />} />
-          </Route> 
-          <Route path="*" element={<Notfound />} />
-        </Routes>
-      </>
-    </Router>
+    <TotalPriceProvider>
+      <Router>
+        <>
+          <Layout />
+          <Routes>
+            <Route path="/" errorElement={<Notfound/>} element={<Landing />} />
+            <Route path="/cart" element={<Cart/>} />
+            <Route path="/order-summary" element={<OrderSummary/>} />
+            <Route path="/payment" element={<Payment/>} />
+            <Route path="/page" element={<Page />}>
+              <Route path="specials" element={<Specials />} />
+              <Route path="coffee" element={<Coffee />} />
+              <Route path="non-coffee" element={<NonCoffee />} />
+              <Route path="extras" element={<Extras />} />
+            </Route> 
+            <Route path="*" element={<Notfound />} />
+          </Routes>
+        </>
+      </Router>
+    </TotalPriceProvider>
   );
 }
