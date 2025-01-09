@@ -13,7 +13,11 @@ const Footer = () => {
           Total: <span className="text-yellow-400">{totalPrice.toFixed(2)}</span>
         </div>
         <div className="flex justify-center w-full lg:w-1/2 lg:justify-center">
-          <span className="text-sm text-gray-400">Your Order is Empty</span>
+          {totalPrice.toFixed(2) === "0.00" ? (
+            <span className="text-sm text-gray-400">Your Order is Empty</span>
+          ) : (
+            <span className="text-sm text-gray-400">Check your orders</span>
+          )}
           <button
             className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 px-4 py-2 rounded ml-2"
             onClick={() => navigate("/cart")}
