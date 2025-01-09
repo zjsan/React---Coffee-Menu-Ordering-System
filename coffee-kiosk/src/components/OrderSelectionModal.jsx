@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTotalPrice } from "./TotalPriceContext"; // Import the context hook
 
 const OrderSelectionModal = ({
   isOpen,
@@ -15,12 +16,18 @@ const OrderSelectionModal = ({
   setSize,
 }) => {
   const [updatedPrice, setUpdatedPrice] = useState(price); // State for updated price
+  const { setTotalPrice } = useTotalPrice();// Get the setTotalPrice function from the context
 
   const handleAddToCart = () => {
     const newItem = { name, price: updatedPrice, image, quantity, type, size };
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     cartItems.push(newItem);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+    // Update the total price in the context 
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0); 
+    setTotalPrice(totalPrice);
+    
     onClose();
     alert('Item added to cart!');
   };
