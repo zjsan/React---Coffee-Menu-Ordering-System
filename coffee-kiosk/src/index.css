@@ -12,6 +12,12 @@
 }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body{
   
   font-family: "Nunito Sans", serif;
@@ -46,9 +52,14 @@ body{
 }
 
 footer{
-  margin-top: 10rem;
   bottom: 0; /* Position the navbar at the bottom of the page */
 }
+
+header, footer {
+  margin: 0;
+  padding: 0.5rem; /* Adjust as necessary */
+}
+
 
 @media only screen and (min-width:768px ){
 
