@@ -5,9 +5,9 @@ import Navigation from './Navigation';
 
 const Page = () => {
   return (
-    <div className="lg:flex lg:h-screen">
+    <div className="lg:flex lg:max-h-screen">
       {/* Sidebar (Navigation) */}
-      <div className="lg:max-w-xs lg:h-full lg:bg-gray-900">
+      <div className="lg:max-w-xs lg:max-h-screen lg:bg-gray-900">
         <Header />
         <Navigation />
       </div>
