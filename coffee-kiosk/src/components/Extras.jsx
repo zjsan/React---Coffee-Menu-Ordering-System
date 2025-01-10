@@ -30,7 +30,7 @@ const Extras = () => {
       };
     
       return (
-        <div className="h-screen bg-gray-50">
+        <div className=" bg-gray-50">
           <h1 className="text-2xl font-bold mb-4 text-center">Menu</h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {  extrasMenu.map((item, index) => (
