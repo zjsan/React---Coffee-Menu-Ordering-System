@@ -33,7 +33,7 @@ const Coffee = () => {
 
   return (
     <div className=" bg-gray-50">
-      <h1 className="text-2xl font-bold mb-4 text-center">Menu</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center  text-gray-900">Menu</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
         {coffeeMenu.map((item, index) => (
           <MenuItem
