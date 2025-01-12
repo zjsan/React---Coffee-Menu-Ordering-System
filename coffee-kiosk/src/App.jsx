@@ -14,6 +14,7 @@ import Cart from "./components/Cart";
 import OrderSummary from "./components/OrderSummary";
 import Payment from "./components/Payment";
 import { TotalPriceProvider } from "./components/TotalPriceContext"; // Import the provider
+import OrderPlacement from "./components/OrderPlacement";
 
 export default function App() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/cart" element={<Cart/>} />
             <Route path="/order-summary" element={<OrderSummary/>} />
             <Route path="/payment" element={<Payment/>} />
+            <Route path="/order-placement" element={<OrderPlacement/>} />
             <Route path="/page" element={<Page />}>
               <Route path="specials" element={<Specials />} />
               <Route path="coffee" element={<Coffee />} />
