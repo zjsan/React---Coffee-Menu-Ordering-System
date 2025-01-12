@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
 const Payment = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
       <Header />
@@ -18,7 +19,7 @@ const Payment = () => {
         </div>
       </div>
       <div className="container mx-auto py-5   px-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-        <button className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
+        <button  onClick={() => navigate("/order-placement")} className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
           Proceed
         </button>
         <button
