@@ -83,7 +83,7 @@ const OrderSelectionModal = ({
 
   return (
     <div className="modal modal-open">
-      <div className="modal-box p-7 h-15 rounded-lg shadow-lg">
+      <div className="modal-box p-7 h-15 rounded-lg shadow-lg text-gray-50">
         <div className="flex flex-col items-center">
           <h3 className="text-lg font-semibold mb-2">{title}</h3>
           <img
@@ -91,7 +91,7 @@ const OrderSelectionModal = ({
             alt={name}
             className="w-32 h-15 rounded-3xl mb-4 mt-3"
           />
-          <p className="text-gray-600 mb-4">{name}</p>
+          <p className="text-gray-50 mb-4 ">{name}</p>
           <p className="text-xl font-bold mb-3">Price: {updatedPrice}</p>
 
           <form className="form mt-0 flex flex-col items-start">
