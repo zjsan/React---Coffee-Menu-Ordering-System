@@ -2,7 +2,7 @@ const OrderPlacement = () => {
 
   let orderNumber = Math.floor(Math.random() * 501)
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center"> 
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center text-gray-900"> 
       <div className="container mx-auto py-10 px-4"> 
         <h2 className="text-3xl font-bold text-center mb-10">Thank you!</h2>
         <div className="text-center mb-8"> {/* Increased bottom margin */}
