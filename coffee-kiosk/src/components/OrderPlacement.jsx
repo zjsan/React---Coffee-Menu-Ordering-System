@@ -36,12 +36,7 @@ const OrderPlacement = () => {
           <button onClick={handleStartNewOrder} className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
             Start New Order
           </button>
-          <button
-            onClick={() => window.history.back()}
-            className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600"
-          >
-            Close
-          </button>
+      
         </div>
       </div>
     </div>
