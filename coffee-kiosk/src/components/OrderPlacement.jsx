@@ -17,6 +17,7 @@ const OrderPlacement = () => {
   }, []); 
 
   const handleStartNewOrder = () => {
+    localStorage.removeItem('cartItems'); // Clear cart items from localStorage
     localStorage.removeItem('orderNumber'); // Remove the stored order number
     navigate("/"); 
   };
