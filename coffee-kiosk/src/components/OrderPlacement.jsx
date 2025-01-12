@@ -20,6 +20,7 @@ const OrderPlacement = () => {
     localStorage.removeItem('cartItems'); // Clear cart items from localStorage
     localStorage.removeItem('orderNumber'); // Remove the stored order number
     navigate("/"); 
+    window.location.reload(); // Trigger page refresh
   };
 
   return (
