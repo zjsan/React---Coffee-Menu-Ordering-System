@@ -1,7 +1,7 @@
 
 # Coffee Kiosk App
 
-A simple web application to implement Coffee Menu Ordering.  Developed using React, NodeJS, and MySQL.
+A simple web application to implement Coffee Menu Ordering.  Developed using ReactJS.
 
 The Coffee Kiosk App is software designed to allow customers to pre-order coffee and snacks with their own customisation preferences. Customers will have to wait a long time to place their orders and receive their coffee if the restaurant is full. Their valuable time is saved by this application.
 
