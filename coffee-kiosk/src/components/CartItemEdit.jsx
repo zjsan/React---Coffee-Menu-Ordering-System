@@ -50,8 +50,8 @@ const CartItemEdit = ({
   };
 
   return (
-    <div className="modal modal-open">
-      <div className="modal-box p-7 h-15 rounded-lg shadow-lg">
+    <div className="modal modal-open ">
+      <div className="modal-box p-7 h-15 rounded-lg shadow-lg bg-gray-200">
         <div className="flex flex-col items-center">
           <h3 className="text-lg font-semibold mb-2">Edit Item</h3>
           <img
@@ -69,7 +69,7 @@ const CartItemEdit = ({
               <input
                 type="number"
                 id="quantity"
-                className="mt-1 ml-1 block max-w-fit px-2 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 ml-1 block max-w-fit px-2 py-1 border border-gray-300 bg-gray-50 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 value={quantity}
                 onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
                 min="1"
@@ -81,7 +81,7 @@ const CartItemEdit = ({
             {item.type !== "N/A" && (
               <div className="mt-4 flex items-center justify-center">
                 <span>Type: </span>
-                <div className="ml-2 flex space-x-4">
+                <div className="ml-2 flex space-x-4 ">
                   <label>
                     <input
                       type="radio"
@@ -151,9 +151,9 @@ const CartItemEdit = ({
             )}
           </form>
         </div>
-        <div className="flex justify-center flex-col lg:flex-row lg:justify-end mt-5">
+        <div className="flex justify-center flex-col lg:flex-row lg:justify-end mt-5 ">
           <button
-            className="btn btn-primary mb-3 lg:mb-0 lg:mr-2"
+            className="btn btn-primary mb-3 lg:mb-0 lg:mr-2 bg-blue-700 text-gray-50"
             onClick={handleSaveChanges}
           >
             Save Changes
