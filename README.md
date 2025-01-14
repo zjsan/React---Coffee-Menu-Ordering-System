@@ -47,7 +47,7 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  refer to requirements.txt
+  npm install
 ```
 
 Start the server
