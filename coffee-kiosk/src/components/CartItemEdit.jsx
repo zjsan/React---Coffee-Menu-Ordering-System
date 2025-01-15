@@ -10,21 +10,22 @@ const CartItemEdit = ({
   const [quantity, setQuantity] = useState(item.quantity);
   const [type, setType] = useState(item.type);
   const [size, setSize] = useState(item.size);
-  const [updatedPrice, setUpdatedPrice] = useState(item.price);
+  const [updatedPrice, setUpdatedPrice] = useState(item.price); // Initial price
 
   useEffect(() => {
-    // Calculate updated price based on type, size, and quantity
-    let newPrice = item.basePrice;
-
+    let newPrice = item.basePrice; // Start with base price
+  
     if (type === "Hot") {
-      newPrice -= 20;
+      newPrice -= 20; // Adjust for Hot
     } else if (type === "Iced" && size !== "Small") {
-      newPrice += size === "Medium" ? 20 : 30;
+      newPrice += size === "Medium" ? 20 : 30; // Adjust for Iced and size
     }
-
-    newPrice *= quantity;
-    setUpdatedPrice(newPrice);
+  
+    newPrice *= quantity; // Multiply by quantity
+    setUpdatedPrice(newPrice); // Update state
   }, [type, size, quantity, item.basePrice]);
+  
+  
 
   useEffect(() => {
     // Disable size for "Hot" drinks or extras
@@ -38,14 +39,14 @@ const CartItemEdit = ({
   if (!isOpen) return null;
 
   const handleSaveChanges = () => {
-    const updatedItem = {
+    
+    onUpdate({
       ...item,
-      quantity,
       type,
       size,
+      quantity,
       price: updatedPrice,
-    };
-    onUpdate(updatedItem); // Pass updated item back to parent
+     }) // Pass the recalculated price); // Pass updated item back to parent
     onClose();
   };
 

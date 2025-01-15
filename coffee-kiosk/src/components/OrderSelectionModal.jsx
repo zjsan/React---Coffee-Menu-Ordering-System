@@ -25,7 +25,7 @@ const OrderSelectionModal = ({
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     // Update the total price in the context 
-    const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0); 
+    const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0); 
     setTotalPrice(totalPrice);
     
     onClose();
@@ -83,7 +83,7 @@ const OrderSelectionModal = ({
 
   return (
     <div className="modal modal-open">
-      <div className="modal-box p-7 h-15 rounded-lg shadow-lg text-gray-50">
+      <div className="modal-box p-7 h-15 rounded-lg shadow-lg text-gray-900">
         <div className="flex flex-col items-center">
           <h3 className="text-lg font-semibold mb-2">{title}</h3>
           <img
